@@ -1,0 +1,52 @@
+eureka:
+  server:
+    enable-self-preservation: false # 关闭自我保护，从而保证会注销服务
+    eviction-interval-timer-in-ms: 3000 # 清理间隔
+
+---
+spring:
+  profiles: eureka1
+server:
+  port: 9001
+eureka:
+  server:
+    #  eureka server 启动时会创建一个定时任务，每隔一段时间(默认60s)将当前清单中超时(默认90s)没有续约的服务剔除出去
+    #  自我保护 ：
+    #  在信息面板中可能会出现这样的红色警告 EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.
+    #  该警告就是触发了eureka的自我保护机制，服务注册到eureka server后会维护一个心跳连接.eureka server在运行期间，会统计心跳失败的比例在15分钟内是否低于85%.
+    #  如果低于,会将当前的实例注册信息保护起来,让这些实例不会过期.可以配置 eureka.server.enable-self-preservation=false 来关闭保护机制
+    #  关闭保护机制，信息面板中会显示 THE SELF PRESERVATION MODE IS TURNED OFF.THIS MAY NOT PROTECT INSTANCE EXPIRY IN CASE OF NETWORK/OTHER PROBLEMS.
+    enable-self-preservation: false
+  instance:
+    hostname: eureka1   # 指定当profile=peer1
+  client:
+    #  在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为
+    #  配置register-with-eureka: false 和 fetch-registry: false 来表明自己是一个eureka server
+    service-url:
+      defaultZone: http://eureka1:9001/eureka/  # 将自己注册到peer2这个Eureka上面去
+    register-with-eureka: false
+    fetch-registry: false
+
+---
+spring:
+  profiles: eureka2
+server:
+  port: 9002
+eureka:
+  server:
+    #  eureka server 启动时会创建一个定时任务，每隔一段时间(默认60s)将当前清单中超时(默认90s)没有续约的服务剔除出去
+    #  自我保护 ：
+    #  在信息面板中可能会出现这样的红色警告 EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.
+    #  该警告就是触发了eureka的自我保护机制，服务注册到eureka server后会维护一个心跳连接.eureka server在运行期间，会统计心跳失败的比例在15分钟内是否低于85%.
+    #  如果低于,会将当前的实例注册信息保护起来,让这些实例不会过期.可以配置 eureka.server.enable-self-preservation=false 来关闭保护机制
+    #  关闭保护机制，信息面板中会显示 THE SELF PRESERVATION MODE IS TURNED OFF.THIS MAY NOT PROTECT INSTANCE EXPIRY IN CASE OF NETWORK/OTHER PROBLEMS.
+    enable-self-preservation: false
+  instance:
+    hostname: eureka2   # 指定当profile=peer1
+  client:
+    #  在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为
+    #  配置register-with-eureka: false 和 fetch-registry: false 来表明自己是一个eureka server
+    service-url:
+      defaultZone: http://eureka2:9002/eureka/  # 将自己注册到peer2这个Eureka上面去
+    register-with-eureka: false
+    fetch-registry: false

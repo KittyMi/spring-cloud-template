@@ -1,0 +1,61 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: service-zuul
+  cloud:
+    config:
+      name: backend-core,backend-redis
+      profile: dev
+      label: master
+      fail-fast: true #不加载配置,减少等待前置的时间
+      discovery:
+        enabled: true # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
+        service-id: service-config # 指定Config Server在服务发现中的serviceId，默认是configserver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8001/eureka/,http://eureka2:8002/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+# 负载均衡
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 60000
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 2
+  MaxAutoRetries: 1
+
+# 网关设置
+zuul:
+  ribbon-isolation-strategy: thread
+  #需要忽略的头部信息，不在传播到其他服务
+  sensitive-headers: Access-Control-Allow-Origin
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  # http://cloud.spring.io/spring-cloud-static/Camden.SR3/#_uploading_files_through_zuul
+  hystrix:
+    enabled: true
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 120000
+
+swagger:
+  butler:
+    auto-generate-from-zuul-routes: true
+    ignore-routes: service-config, service-eureka
+    api-docs-path: v2/api-docs
+    swagger-version: 2.0

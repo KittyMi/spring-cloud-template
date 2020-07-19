@@ -1,0 +1,23 @@
+server:
+  port: 9006
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: service-zipkin
+  cloud:
+    config:
+      name: backend-core,backend-redis
+      profile: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:9001/eureka/,http://eureka2:9002/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+

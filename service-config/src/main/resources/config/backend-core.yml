@@ -1,0 +1,19 @@
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
+zipkin:
+  base-url: http://zipkin
+  boot:
+    admin:
+      client:
+        url: http://localhost:9003
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

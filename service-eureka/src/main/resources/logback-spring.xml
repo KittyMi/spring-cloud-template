@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <!--application.yml 传送参数, 不能使用logback 自带的<property>标签-->
+    <!--TODO spring.application.name must in bootstrap.yml-->
+    <springProperty scope="context" name="logName" source="spring.application.name" defaultValue="spring-cloud-template"/>
+    <springProperty scope="context" name="logDir" source="logback.logDir" defaultValue="/var/log/spring-cloud-template"/>
+
+    <!--<property name="logback.logDir" value="/mnt/data01/logs/backend-web-service"/>-->
+    <!--<property name="logback.logName" value="backend"/>-->
+
+    <contextName>${logName}</contextName>
+
+    <property name="CONSOLE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger %line : %msg%n"/>
+
+    <!--控制台输出配置 ConsoleAppender-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!--过滤器-->
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+        <!--<level>ERROR</level>-->
+        <!--</filter>-->
+        <!--展示格式layout-->
+        <layout class ="ch.qos.logback.classic.PatternLayout">
+            <pattern>${CONSOLE_PATTERN}</pattern>
+        </layout>
+
+    </appender>
+
+<!--    KafkaAppender-->
+<!--    <appender name="kafka" class="com.github.danielwegener.logback.kafka.KafkaAppender">-->
+
+<!--        <topic>logstash</topic>-->
+<!--        <producerConfig>bootstrap.servers=dnode30:9092,dnode31:9092,dnode32:9092</producerConfig>-->
+<!--        <producerConfig>acks=0</producerConfig>-->
+<!--        <producerConfig>linger.ms=1000</producerConfig>-->
+<!--        <producerConfig>max.block.ms=0</producerConfig>-->
+<!--        <producerConfig>client.id=${HOSTNAME}-${CONTEXT_NAME}-logback-relaxed</producerConfig>-->
+
+<!--        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy" />-->
+<!--        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy" />-->
+
+
+<!--        &lt;!&ndash;日志输出编码和格式&ndash;&gt;-->
+<!--        <encoder>-->
+<!--            <charset>UTF-8</charset>-->
+<!--            &lt;!&ndash;<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %line - %msg%n</pattern>&ndash;&gt;-->
+<!--            &lt;!&ndash;省略日期也可，文件名带有日期&ndash;&gt;-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} ${HOSTNAME} ${CONTEXT_NAME} [%thread] %-5level %logger %line : %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+    <!--指定最基础的日志输出级别-->
+    <root level="INFO">
+        <appender-ref ref="console"/>
+<!--        <appender-ref ref="kafka"/>-->
+    </root>
+</configuration>
