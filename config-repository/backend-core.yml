@@ -9,7 +9,7 @@ zipkin:
   boot:
     admin:
       client:
-        url: http://zipkin:9003
+        url: http://zipkin:9004
 
 # 暴露监控端点
 management:

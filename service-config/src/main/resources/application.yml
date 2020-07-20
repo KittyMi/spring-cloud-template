@@ -7,7 +7,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://zipkin:9003
+        url: http://zipkin:9004
   # 获取本地配置文件，本身支持：本地储存、git远程、SVN
   profiles:
     active: dev
