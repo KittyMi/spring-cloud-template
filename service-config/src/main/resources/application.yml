@@ -10,17 +10,5 @@ spring:
         url: http://zipkin:9003
   # 获取本地配置文件，本身支持：本地储存、git远程、SVN
   profiles:
-    active: native
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: classpath:/config/
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka1:9001/eureka/,http://eureka2:9002/eureka/
-    registry-fetch-interval-seconds: 5
-  instance:
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
+    active: dev
+

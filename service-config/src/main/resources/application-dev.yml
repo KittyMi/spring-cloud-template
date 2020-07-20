@@ -1,0 +1,32 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:9001/eureka/,http://eureka2:9002/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/KittyMi/spring-cloud-template.git # git仓库地址
+          search-paths: config-repository # git仓库的相对地址，可配置多个用,分割
+          username: 641230056@qq.com
+          password: Andy940510
+
+
+
+# actuator
+management:
+  server:
+    port: ${server.port}
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
