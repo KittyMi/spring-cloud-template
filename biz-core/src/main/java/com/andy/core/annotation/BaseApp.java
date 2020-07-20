@@ -10,7 +10,7 @@ import org.springframework.core.annotation.AliasFor;
 import java.lang.annotation.*;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/9/16 11:55
  * desc: 组合注解
  */
@@ -18,7 +18,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-
 @EnableDiscoveryClient
 @EnableSwagger2Doc
 @SpringBootApplication(

@@ -26,3 +26,9 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 
 
+management:
+  metrics:
+    web:
+      # 解决Zipkin报错IllegalArgumentException: Prometheus requires that all meters
+      server:
+        auto-time-requests: false

@@ -1,7 +1,7 @@
 package com.andy.zuul.config;
 
 import com.andy.core.bean.dto.UserInfoDTO;
-import com.andy.core.feign.IAuthService;
+import com.andy.core.feign.IAuthenticationService;
 import com.andy.core.feign.IUserService;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
@@ -15,7 +15,7 @@ import java.util.Enumeration;
 
 import static com.andy.core.Constant.CURRENT_USER_KEY;
 import static com.andy.core.bean.ErrorCode.UNAUTHORIZED;
-import static com.andy.core.bean.ResultFactory.fail;
+import static com.andy.core.bean.RFactory.fail;
 
 /**
  * @author min.lai
@@ -30,7 +30,7 @@ public class TokenAccessFilter extends ZuulFilter {
     IUserService userService;
 
     @Resource
-    IAuthService authService;
+    IAuthenticationService authService;
     /**
      * 路由前拦截
      * @return pre

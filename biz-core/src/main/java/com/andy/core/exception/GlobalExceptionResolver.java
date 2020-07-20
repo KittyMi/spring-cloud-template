@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.support.spring.FastJsonJsonView;
 import com.andy.core.bean.ErrorCode;
-import com.andy.core.bean.ResultEntity;
+import com.andy.core.bean.R;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -82,14 +82,14 @@ public class GlobalExceptionResolver implements HandlerExceptionResolver {
 
             // RpcServiceException保证Message比不为空，默认为ResultEntity<String>的Json字符串
             String msg = e.getMessage();
-            ResultEntity<String> resultEntity = JSON.parseObject(
+            R<String> r = JSON.parseObject(
                     msg,
-                    new TypeReference<ResultEntity<String>>() {}
+                    new TypeReference<R<String>>() {}
             );
 
-            attributes.put("data", resultEntity.getData());
-            attributes.put("code", resultEntity.getCode());
-            attributes.put("flag", resultEntity.getFlag());
+            attributes.put("data", r.getData());
+            attributes.put("code", r.getCode());
+            attributes.put("flag", r.getFlag());
 
         } else {
             if (o instanceof HandlerMethod) {

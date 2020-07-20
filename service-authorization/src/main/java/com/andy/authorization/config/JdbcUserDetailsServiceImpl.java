@@ -1,0 +1,57 @@
+package com.andy.authorization.config;
+
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.andy.authorization.service.IUserInfoService;
+import com.andy.mybatis.entity.UserInfo;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.andy.core.bean.ErrorCode.USERNAME_NOT_FOUND;
+
+/**
+ * @author min.lai
+ * @date 2019/7/17 19:52
+ * desc: Jdbc user detail
+ */
+public class JdbcUserDetailsServiceImpl implements UserDetailsService {
+    @Resource
+    PasswordEncoder passwordEncoder;
+
+    @Resource
+    IUserInfoService userInfoService;
+
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+
+        UserInfo userInfo = userInfoService.getOne(
+                Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUsername, s),
+                false
+        );
+        if (null == userInfo) {
+            throw new UsernameNotFoundException(String.valueOf(USERNAME_NOT_FOUND.getCode()));
+        }
+
+        // TODO
+        List<String> roleList = new ArrayList<>();
+        roleList.add("TEST");
+
+        List<GrantedAuthority> list = roleList.stream().map(
+                SimpleGrantedAuthority::new
+        ).collect(Collectors.toList());
+
+        return new User(
+                s, userInfo.getPassword(),
+                list
+        );
+    }
+}

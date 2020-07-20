@@ -2,8 +2,8 @@ package com.andy.zuul.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-import com.andy.core.bean.ResultEntity;
-import com.andy.core.bean.ResultFactory;
+import com.andy.core.bean.R;
+import com.andy.core.bean.RFactory;
 import com.andy.core.exception.RpcServiceException;
 import com.netflix.zuul.exception.ZuulException;
 import feign.FeignException;
@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 public class CustomErrorController {
 
     @GetMapping(value = "/error")
-    public ResponseEntity<ResultEntity> error(HttpServletRequest request) {
+    public ResponseEntity<R> error(HttpServletRequest request) {
         Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
         if (throwable instanceof ZuulException) {
             Throwable cause = throwable.getCause();
@@ -35,18 +35,18 @@ public class CustomErrorController {
                 if (cause1 instanceof FeignException) {
                     FeignException e = (FeignException) cause1;
                     return new ResponseEntity<>(
-                            JSON.parseObject(cause.getMessage(), new TypeReference<ResultEntity<String>>(){}),
+                            JSON.parseObject(cause.getMessage(), new TypeReference<R<String>>(){}),
                             HttpStatus.valueOf(e.status())
                     );
                 } else {
                     return new ResponseEntity<>(
-                            JSON.parseObject(cause.getMessage(), new TypeReference<ResultEntity<String>>(){}),
+                            JSON.parseObject(cause.getMessage(), new TypeReference<R<String>>(){}),
                             HttpStatus.BAD_GATEWAY
                     );
                 }
             }
         }
 
-        return new ResponseEntity<>(ResultFactory.fail(), HttpStatus.BAD_GATEWAY);
+        return new ResponseEntity<>(RFactory.fail(), HttpStatus.BAD_GATEWAY);
     }
 }

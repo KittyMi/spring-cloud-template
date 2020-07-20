@@ -23,7 +23,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Accessors(chain = true)
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
-public class ResultEntity<T> implements ImABean{
+public class R<T> implements ImABean{
 
     private static final long serialVersionUID = -587728047893738620L;
     private Boolean flag;

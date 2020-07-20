@@ -11,14 +11,14 @@ import static com.baomidou.mybatisplus.extension.enums.ApiErrorCode.SUCCESS;
  * @date 2019/5/30 15:26
  * desc: ResultEntity的工厂方法
  */
-public class ResultFactory {
+public class RFactory {
 
     /**
      * 成功（无返回值）
      * @return  ResultEntity<T>
      */
     @NonNull
-    public static ResultEntity success() {
+    public static R success() {
         return success(EMPTY_OBJECT);
     }
 
@@ -29,8 +29,8 @@ public class ResultFactory {
      * @return  ResultEntity<T>
      */
     @NonNull
-    public static <T> ResultEntity<T> success(@NonNull T data) {
-        return new ResultEntity<T>()
+    public static <T> R<T> success(@NonNull T data) {
+        return new R<T>()
                 .setFlag(true)
                 .setCode((int) SUCCESS.getCode())
                 .setData(data);
@@ -43,8 +43,8 @@ public class ResultFactory {
      * @return ResultEntity
      */
     @NonNull
-    public static ResultEntity fail(@NonNull ErrorCode errorCode) {
-        return new ResultEntity<>()
+    public static R fail(@NonNull ErrorCode errorCode) {
+        return new R<>()
                 .setFlag(false)
                 .setCode(errorCode.getCode())
                 .setData(EMPTY_OBJECT);
@@ -53,8 +53,8 @@ public class ResultFactory {
      * 失败（带错误原因）
      */
     @NonNull
-    public static ResultEntity fail(ErrorCode errorCode, String msg) {
-        return new ResultEntity<>()
+    public static R fail(ErrorCode errorCode, String msg) {
+        return new R<>()
                 .setFlag(false)
                 .setCode(errorCode.getCode())
                 .setData(msg);
@@ -65,7 +65,7 @@ public class ResultFactory {
      * @return ResultEntity
      */
     @NonNull
-    public static ResultEntity fail() {
+    public static R fail() {
         return fail(FAIL);
     }
 }

@@ -2,6 +2,7 @@ package com.andy.core;
 
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
+import com.andy.core.annotation.BaseApp;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -17,17 +18,18 @@ import org.springframework.context.annotation.ComponentScan;
  * 3. 开启Eureka微服务注册发现
  * 4. 开启Swagger
  */
-@SpringBootApplication(
-        exclude = DruidDataSourceAutoConfigure.class
-)
-@ComponentScan(
-        basePackages = {
-                "com.andy.*.config"
-        }
-)
-@EnableFeignClients( basePackages = "com.andy.*.feign" )
-@EnableDiscoveryClient
-@EnableSwagger2Doc
+//@SpringBootApplication(
+//        exclude = DruidDataSourceAutoConfigure.class
+//)
+//@ComponentScan(
+//        basePackages = {
+//                "com.andy.*.config"
+//        }
+//)
+//@EnableFeignClients( basePackages = "com.andy.*.feign" )
+//@EnableDiscoveryClient
+//@EnableSwagger2Doc
+@BaseApp
 public class BaseApplication {
 
 }
