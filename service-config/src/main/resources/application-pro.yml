@@ -22,9 +22,16 @@ spring:
 
 # actuator
 management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
   server:
     port: ${server.port}
   endpoints:
     web:
       exposure:
-        include: bus-refresh,refresh
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
