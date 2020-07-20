@@ -37,7 +37,7 @@
 4. ZipkinApplication.java -- Zipkin链路监控
 5. AdminBizApplication.java -- 系统管理模块
 6. AuthApplication.java -- 授权模块
-7. GatewayApplication.java -- Zuul网关
+7. ZuulApplication.java -- Zuul网关
 ```
 
 5. 启动前端项目
