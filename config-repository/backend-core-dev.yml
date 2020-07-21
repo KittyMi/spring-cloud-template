@@ -11,10 +11,10 @@ mysql:
   host: mysql
   port: 3306
   username: root
-  password: 123456
+  password: root123456
 
 redis:
-  host: redis
+  host: dnode86
   port: 6379
   database: 0
 
