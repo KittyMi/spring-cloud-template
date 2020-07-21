@@ -1,6 +1,7 @@
 package com.andy.mybatis.entity;
 
 import com.andy.mybatis.entity.base.BaseDO;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import lombok.Data;
@@ -50,6 +51,7 @@ public class UserInfo extends BaseDO {
         /**
         * 删除标志
         */
-    private Boolean deleted;
+    @TableLogic
+    private Integer isDeleted;
 
 }

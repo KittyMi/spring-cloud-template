@@ -4,8 +4,9 @@ feign:
   okhttp:
     enabled: true
 
-zipkin:
-  base-url: http://zipkin
+spring:
+  zipkin:
+    base-url: http://zipkin:9006
   boot:
     admin:
       client:

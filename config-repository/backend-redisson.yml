@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      # SpringCloud加载配置的是匹配到立即返回:
+      # 搜索的优先级是远程配置 > 命令行 > 本地application.yml > 本地bootstrap.yml
+      # 配置服务从/{name}/{profile}/{label}提供属性源，客户端应用程序中的默认绑定
+      #“name”= ${spring.application.name}
+      #
+      #“profile”= ${spring.profiles.active}（实际上是Environment.getActiveProfiles()）
+      #
+      #“label”=“master”
+
+      # https://cloud.tencent.com/developer/article/1164182
+      # http://www.itersblog.com/archives/4.html
+      # https://www.springcloud.cc/spring-cloud-config.html
+      # 添加如下配置允许本地替换覆盖
+      override-none: true
+      allow-override: true
+      override-system-properties: false
+
+singleServerConfig:
+  # address: "redis://127.0.0.1:6379"
+  address: "redis://${redis.host}:${redis.port}/${redis.database}"
