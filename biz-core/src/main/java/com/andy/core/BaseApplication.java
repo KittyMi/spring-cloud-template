@@ -18,18 +18,18 @@ import org.springframework.context.annotation.ComponentScan;
  * 3. 开启Eureka微服务注册发现
  * 4. 开启Swagger
  */
-//@SpringBootApplication(
-//        exclude = DruidDataSourceAutoConfigure.class
-//)
-//@ComponentScan(
-//        basePackages = {
-//                "com.andy.*.config"
-//        }
-//)
-//@EnableFeignClients( basePackages = "com.andy.*.feign" )
-//@EnableDiscoveryClient
-//@EnableSwagger2Doc
-@BaseApp
+@SpringBootApplication(
+        exclude = DruidDataSourceAutoConfigure.class
+)
+@ComponentScan(
+        basePackages = {
+                "com.andy.*.config"
+        }
+)
+@EnableFeignClients( basePackages = "com.andy.*.feign" )
+@EnableDiscoveryClient
+@EnableSwagger2Doc
+//@BaseApp
 public class BaseApplication {
 
 }

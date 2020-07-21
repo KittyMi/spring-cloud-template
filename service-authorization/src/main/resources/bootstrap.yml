@@ -10,6 +10,10 @@ eureka:
         lease-expiration-duration-in-seconds: 90
 
 spring:
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: service-authorization
   cloud:

@@ -12,6 +12,10 @@ eureka:
 
 
 spring:
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: service-authentication
   cloud:

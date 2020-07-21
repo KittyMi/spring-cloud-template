@@ -20,7 +20,7 @@
       <artifactId>biz-core</artifactId>
       <exclusions>
         <exclusion>
-          <groupId>com.zdh</groupId>
+          <groupId>com.andy</groupId>
           <artifactId>biz-mybatis</artifactId>
         </exclusion>
       </exclusions>
