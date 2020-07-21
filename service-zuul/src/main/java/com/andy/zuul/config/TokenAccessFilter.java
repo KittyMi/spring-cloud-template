@@ -15,7 +15,7 @@ import java.util.Enumeration;
 
 import static com.andy.core.Constant.CURRENT_USER_KEY;
 import static com.andy.core.bean.ErrorCode.UNAUTHORIZED;
-import static com.andy.core.bean.RFactory.fail;
+import static com.andy.core.bean.ResultFactory.fail;
 
 /**
  * @author min.lai

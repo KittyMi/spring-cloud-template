@@ -24,7 +24,7 @@ public class PermissionServiceImpl implements IPermissionService {
     @Resource
     private AntPathMatcher pathMatcher;
     @Resource
-    private ITokenService iTokenService;
+    private ITokenService tokenService;
     @Resource
     private IUserService userService;
 
@@ -37,7 +37,7 @@ public class PermissionServiceImpl implements IPermissionService {
      */
     @Override
     public Boolean ignoreAuthentication(String url) {
-        // TODO 放行fastdfs
+        // TODO 放行
         return Stream.of(
                 "/service-authentication/**",
                 "/service-authorization/**",
@@ -48,6 +48,7 @@ public class PermissionServiceImpl implements IPermissionService {
         ).anyMatch(
                 ignoreUrl -> pathMatcher.match(ignoreUrl, url)
         );
+
     }
 
     /**
@@ -55,7 +56,7 @@ public class PermissionServiceImpl implements IPermissionService {
      */
 
     public Boolean hasPermition(String token, String url, String method){
-        Map<String,Object>  map =  iTokenService.readAdditionalInformation(token);
+        Map<String,Object>  map =  tokenService.readAdditionalInformation(token);
         String userName = (String) map.get("username");
         if(userName == null){
             return false;

@@ -23,6 +23,8 @@ public enum ErrorCode {
     USERNAME_PATTERN_ERROR(101001),
     // 密码格式错误
     PASSWORD_PATTERN_ERROR(101002),
+    // 用户名已经存在
+    USERNAME_ALREADY_EXIST(101007),
 
     // 用户名不存在
     USERNAME_NOT_FOUND(101003),
@@ -54,7 +56,7 @@ public enum ErrorCode {
     EXCEL_DATA_ERROR(700000),
 
     // 成功
-    SUCCESS(0);
+    SUCCESS(200);
 
 
     @Setter

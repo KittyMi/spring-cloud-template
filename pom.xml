@@ -60,6 +60,7 @@
     <module>service-monitor</module>
     <module>service-authorization</module>
     <module>service-authentication</module>
+      <module>service-user</module>
   </modules>
 
   <dependencies>

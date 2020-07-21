@@ -46,7 +46,7 @@ public class UserInfo extends BaseDO {
         /**
         * 用户昵称
         */
-    private String nickname;
+    private String nickName;
 
         /**
         * 删除标志

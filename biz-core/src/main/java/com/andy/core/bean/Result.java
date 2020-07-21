@@ -8,7 +8,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/5/16 15:44
  * description:
  * 返回实体类，其中data数据主要由DTO和AO构成:
@@ -23,7 +23,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Accessors(chain = true)
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
-public class R<T> implements ImABean{
+public class Result<T> implements ImABean{
 
     private static final long serialVersionUID = -587728047893738620L;
     private Boolean flag;

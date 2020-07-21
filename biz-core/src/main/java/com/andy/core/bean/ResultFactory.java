@@ -4,21 +4,20 @@ import lombok.NonNull;
 
 import static com.andy.core.Constant.EMPTY_OBJECT;
 import static com.andy.core.bean.ErrorCode.FAIL;
-import static com.baomidou.mybatisplus.extension.enums.ApiErrorCode.SUCCESS;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/5/30 15:26
  * desc: ResultEntity的工厂方法
  */
-public class RFactory {
+public class ResultFactory {
 
     /**
      * 成功（无返回值）
      * @return  ResultEntity<T>
      */
     @NonNull
-    public static R success() {
+    public static Result success() {
         return success(EMPTY_OBJECT);
     }
 
@@ -29,10 +28,10 @@ public class RFactory {
      * @return  ResultEntity<T>
      */
     @NonNull
-    public static <T> R<T> success(@NonNull T data) {
-        return new R<T>()
+    public static <T> Result<T> success(@NonNull T data) {
+        return new Result<T>()
                 .setFlag(true)
-                .setCode((int) SUCCESS.getCode())
+                .setCode(ErrorCode.SUCCESS.getCode())
                 .setData(data);
     }
 
@@ -43,8 +42,8 @@ public class RFactory {
      * @return ResultEntity
      */
     @NonNull
-    public static R fail(@NonNull ErrorCode errorCode) {
-        return new R<>()
+    public static Result fail(@NonNull ErrorCode errorCode) {
+        return new Result<>()
                 .setFlag(false)
                 .setCode(errorCode.getCode())
                 .setData(EMPTY_OBJECT);
@@ -53,8 +52,8 @@ public class RFactory {
      * 失败（带错误原因）
      */
     @NonNull
-    public static R fail(ErrorCode errorCode, String msg) {
-        return new R<>()
+    public static Result fail(ErrorCode errorCode, String msg) {
+        return new Result<>()
                 .setFlag(false)
                 .setCode(errorCode.getCode())
                 .setData(msg);
@@ -65,8 +64,10 @@ public class RFactory {
      * @return ResultEntity
      */
     @NonNull
-    public static R fail() {
+    public static Result fail() {
         return fail(FAIL);
     }
+
+
 }
 

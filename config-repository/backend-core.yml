@@ -1,4 +1,6 @@
 feign:
+  hystrix:
+    enabled: true
   httpclient:
     enabled: false
   okhttp:
@@ -11,6 +13,17 @@ spring:
     admin:
       client:
         url: http://zipkin:9004
+
+
+# 负载均衡
+ribbon:
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 2
+  MaxAutoRetries: 1
+
+
 
 # 暴露监控端点
 management:
