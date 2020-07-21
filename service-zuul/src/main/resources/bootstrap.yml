@@ -2,6 +2,8 @@ server:
   port: 9999
 
 spring:
+  profiles:
+    active: dev
   application:
     name: service-zuul
   cloud:
