@@ -10,7 +10,7 @@ spring:
     name: service-user
   cloud:
     config:
-      name: backend-core, backend-mybatis
+      name: service-core, service-mybatis
       profile: dev
       label: master
       fail-fast: true #不加载配置,减少等待前置的时间

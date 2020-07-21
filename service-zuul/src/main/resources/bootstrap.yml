@@ -6,7 +6,7 @@ spring:
     name: service-zuul
   cloud:
     config:
-      name: backend-core,backend-redis
+      name: service-core,service-redis
       profile: dev
       label: master
       fail-fast: true #不加载配置,减少等待前置的时间

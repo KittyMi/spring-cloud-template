@@ -6,7 +6,7 @@ spring:
     name: service-monitor
   cloud:
     config:
-      name: backend-core
+      name: service-core
       profile: dev
       label: master
       fail-fast: true #不加载配置,减少等待前置的时间
