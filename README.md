@@ -37,8 +37,10 @@
 4. ZipkinApplication.java -- Zipkin链路监控
 5. UserApplication.java -- 用户模块
 6. AuthenticationApplication.java --鉴权服务模块
-6. AuthorizationApplication.java -- 授权服务模块
-7. ZuulApplication.java -- Zuul网关
+7. AuthorizationApplication.java -- 授权服务模块
+网关(1.zuul 2.gateway(spring cloud的亲儿子))
+8.1 ZuulApplication.java -- Zuul网关
+8.2 GatewayApplication.java -- Gateway网关 支持webscoket协议等
 ```
 
 5. 启动前端项目

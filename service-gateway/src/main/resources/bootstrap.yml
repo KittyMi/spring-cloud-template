@@ -1,0 +1,56 @@
+server:
+  port: 9998
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:9001/eureka/,http://eureka2:9002/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    initial-status: up
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: service-gateway
+  cloud:
+    config:
+      name: service-core,service-redis
+      profile: dev
+      label: master
+      fail-fast: true #不加载配置,减少等待前置的时间
+      discovery:
+        enabled: true # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
+        service-id: service-config # 指定Config Server在服务发现中的serviceId，默认是configserver
+    inetutils:
+      timeout-seconds: 5
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+#      routes:
+#        - id: server-user
+#          uri: lb://service-user
+#          predicates:
+#            - Path=/service-user/**
+#        - id: service-authentication
+#          uri: lb://service-authentication
+#          predicates:
+#            - Path=/service-authentication/**
+#        - id: service-authorization
+#          uri: lb://service-authorization
+#          predicates:
+#            - Path=/service-authorization/**
+#      default-filters:
+#        - StripPrefix=1
+
+
+swagger:
+  knife:
+    ignore-routes: service-config, service-eureka, service-zuul, service-gateway ,service-zipkin,service-monitor
+    api-docs-path: /v2/api-docs
+    swagger-version: 2.0

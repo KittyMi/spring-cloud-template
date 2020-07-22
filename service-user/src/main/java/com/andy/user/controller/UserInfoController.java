@@ -42,6 +42,7 @@ public class UserInfoController {
      * @return ResultEntity
      */
     @PostMapping(value = "/register")
+    @ApiOperation(value = "用户注册")
     Result register(
             @RequestBody @Valid Req.Register req
     ) {
@@ -79,7 +80,7 @@ public class UserInfoController {
      * @return List<UserInfoDTO>
      */
     @GetMapping("/list")
-    @ApiOperation(value = "用户用户列表")
+    @ApiOperation(value = "用户列表")
     Result list(
             @CurrentUser UserInfoDTO dto
     ) {
