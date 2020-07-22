@@ -63,7 +63,8 @@ public class AuthFilter implements GlobalFilter, Ordered {
             return unauthorized(response);
         }
 
-        log.info(token);
+        log.info("请求token:{}", token);
+        log.info("鉴权完毕");
 
         // 检查token
         if (authService.hasPermission(token, uri, request.getMethodValue())) {
@@ -85,7 +86,7 @@ public class AuthFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return -100;
+        return -20;
     }
 
     /**
