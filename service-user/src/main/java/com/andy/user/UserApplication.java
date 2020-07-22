@@ -3,6 +3,7 @@ package com.andy.user;
 import com.andy.core.BaseApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 /**
  * @author min.lai
@@ -10,9 +11,11 @@ import org.springframework.boot.SpringApplication;
  * 用户服务启动入口
  */
 @Slf4j
+@EnableCircuitBreaker
 public class UserApplication extends BaseApplication {
     public static void main( String[] args ) {
         SpringApplication.run(UserApplication.class,args);
         log.info("用户服务模块启动成功");
     }
+
 }

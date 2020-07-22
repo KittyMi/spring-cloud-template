@@ -32,6 +32,7 @@
 1. EurekaApplication.java -- 服务注册中心 9001 9002
 2. ConfigApplication.java -- 服务配置中心 9003
 3. MonitorApplication.java -- Spring Boot Admin监控 9004
+4. hystrixApplication.java -- Hystrix断路器监控 9005
 4. ZipkinApplication.java -- Zipkin链路监控 9006
 5. UserApplication.java -- 用户模块 9009
 6. AuthenticationApplication.java --鉴权服务模块 9010
