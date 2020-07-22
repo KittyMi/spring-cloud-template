@@ -3,7 +3,7 @@ package com.andy.gateway.config;
 import lombok.Data;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2020/5/28 16:38
  */
 @Data

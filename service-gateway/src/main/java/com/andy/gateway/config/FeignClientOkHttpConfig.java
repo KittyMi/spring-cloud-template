@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/7/19 19:34
  * desc:
  */

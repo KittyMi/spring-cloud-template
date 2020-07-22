@@ -8,17 +8,15 @@
 
 ## 启动说明
 
-1. 修改本地`hosts`文件，添加如下内容（可以通过 [SwitchHosts](http://oldj.github.io/SwitchHosts/) 快速修改）。
+1. 修改本地`hosts`文件，添加如下内容。
 
 ```
-127.0.0.1 eureka
-127.0.0.1 mysql
-127.0.0.1 auth
+127.0.0.1 eureka1 eureka1 zipkin mysql auth
 ```
 
-2. 修改`sct-config/src/main/resources/`下配置文件中的数据库连接信息，主要涉及`sct-admin-biz-dev.yml`和`sct-auth-dev.yml`两个文件
+2. 修改`config-repository/`下配置文件中的数据库连接信息，主要涉及`service-core.yml`和`service-mybatis.yml`、`service-redis.yml`、`service-redisson.yml`这些文件
 
-3. 导入项目根目录下的`base.sql`，建立数据库
+3. 导入项目根目录下的`init.sql`，建立数据库
 
 默认密码请参看`service-user/src/test/PasswordEncoderTest.java`测试类
 
@@ -31,27 +29,27 @@
 4. 严格按照如下顺序依次启动服务模块
 
 ```
-1. EurekaApplication.java -- 服务注册中心
-2. ConfigApplication.java -- 服务配置中心
-3. MonitorApplication.java -- Spring Boot Admin监控
-4. ZipkinApplication.java -- Zipkin链路监控
-5. UserApplication.java -- 用户模块
-6. AuthenticationApplication.java --鉴权服务模块
-7. AuthorizationApplication.java -- 授权服务模块
+1. EurekaApplication.java -- 服务注册中心 9001 9002
+2. ConfigApplication.java -- 服务配置中心 9003
+3. MonitorApplication.java -- Spring Boot Admin监控 9004
+4. ZipkinApplication.java -- Zipkin链路监控 9006
+5. UserApplication.java -- 用户模块 9009
+6. AuthenticationApplication.java --鉴权服务模块 9010
+7. AuthorizationApplication.java -- 授权服务模块 9011
 网关(1.zuul 2.gateway(spring cloud的亲儿子))
-8.1 ZuulApplication.java -- Zuul网关
-8.2 GatewayApplication.java -- Gateway网关 支持webscoket协议等
+8.1 ZuulApplication.java -- Zuul网关 9999
+8.2 GatewayApplication.java -- Gateway网关 9998 支持webscoket协议等
 ```
 
 5. 启动前端项目
 
 ```shell
-$ cd sct-app
+$ cd app-front
 $ npm install
 $ npm run dev
 ```
 
-既然都使用了Spring Cloud微服务，必然要配合Vue前端框架使用才更舒服。在 [Spring Cloud Template分布式微服务前端](https://www.tycoding.cn/2019/05/30/cloud/cloud-template-app/) 文档中已经详细介绍了在Spring Cloud项目中如何配合`vue-admin-template`前端模板项目实现基础的CRUD业务，如果你与一定的Vue基础，相信 [cloud-template](https://github.com/TyCoding/cloud-template) 项目的简洁性足够让你快速了解Vue前后端分离式开发流程了。
+既然都使用了Spring Cloud微服务，必然要配合Vue前端框架使用才更舒服。在 [Spring Cloud Template分布式微服务前端](https://www.6868blog.com/cloud-template-app/) 文档中已经详细介绍了在Spring Cloud项目中如何配合`vue-admin-template`前端模板项目实现基础的CRUD业务，如果你与一定的Vue基础，相信 [cloud-template](https://github.com/TyCoding/cloud-template) 项目的简洁性足够让你快速了解Vue前后端分离式开发流程了。
 
 ## Vue组件嵌套页面
 

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/7/23 14:22
  * desc: 鉴权服务
  */

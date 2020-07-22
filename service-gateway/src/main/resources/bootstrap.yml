@@ -26,7 +26,7 @@ spring:
         enabled: true # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
         service-id: service-config # 指定Config Server在服务发现中的serviceId，默认是configserver
     inetutils:
-      timeout-seconds: 5
+      timeout-seconds: 120
     gateway:
       discovery:
         locator:

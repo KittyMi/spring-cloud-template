@@ -25,29 +25,8 @@ import java.util.Set;
 public class SwaggerResourceConfig implements SwaggerResourcesProvider {
 
     private final RouteLocator routeLocator;
-    private final GatewayProperties gatewayProperties;
     private final SwaggerKnifeProperties properties;
 
-//    @Override
-//    public List<SwaggerResource> get() {
-//        List<SwaggerResource> resources = new ArrayList<>();
-//        List<String> routes = new ArrayList<>();
-//        routeLocator.getRoutes().subscribe(route -> routes.add(route.getId()));
-//        gatewayProperties.getRoutes().forEach(route -> route.getPredicates().stream()
-//                        .filter(predicateDefinition -> ("Path").equalsIgnoreCase(predicateDefinition.getName()))
-//                        .forEach(predicateDefinition -> resources.add(swaggerResource(route.getId(),
-//                                predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + "0")
-//                                        .replace("/**", "/v2/api-docs")))));
-//
-////        gatewayProperties.getRoutes().stream().filter(routeDefinition -> routes.contains(routeDefinition.getId()))
-////                .forEach(route -> route.getPredicates().stream()
-////                        .filter(predicateDefinition -> ("Path").equalsIgnoreCase(predicateDefinition.getName()))
-////                        .forEach(predicateDefinition -> resources.add(swaggerResource(route.getId(),
-////                                predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + "0")
-////                                        .replace("/**", "/v2/api-docs")))));
-//
-//        return resources;
-//    }
 
     @Override
     public List<SwaggerResource> get() {

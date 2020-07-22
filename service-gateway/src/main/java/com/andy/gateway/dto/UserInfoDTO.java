@@ -8,7 +8,7 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/7/15 17:16
  * desc: 用户DTO对象
  */

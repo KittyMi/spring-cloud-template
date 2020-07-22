@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/7/18 18:02
  * desc: FeignClient
  */

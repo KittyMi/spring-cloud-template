@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author ly
+ * @author min.lai
  * @date 2019/7/16 19:54
  * desc: FeignConfig
  */
