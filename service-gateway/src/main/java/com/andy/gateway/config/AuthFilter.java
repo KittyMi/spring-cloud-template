@@ -20,11 +20,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 /**
+ * 认证过滤器 校验token
  * @author min.lai
  * @date 2020/5/25 15:30
  */
 @Slf4j
-public class TokenAccessFilter implements GlobalFilter, Ordered {
+public class AuthFilter implements GlobalFilter, Ordered {
 
     private static final String CURRENT_USER_KEY = "current-user";
 
