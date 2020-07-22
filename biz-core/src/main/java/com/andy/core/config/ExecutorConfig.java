@@ -46,7 +46,7 @@ public class ExecutorConfig implements AsyncConfigurer {
         //最大线程数
         threadPoolTaskExecutor.setMaxPoolSize(5);
         //配置队列大小
-        threadPoolTaskExecutor.setQueueCapacity(50);
+        threadPoolTaskExecutor.setQueueCapacity(30);
         //配置线程池前缀
         threadPoolTaskExecutor.setThreadNamePrefix("async-service-");
         //拒绝策略
@@ -68,7 +68,7 @@ public class ExecutorConfig implements AsyncConfigurer {
         //最大线程数
         threadPoolTaskExecutor.setMaxPoolSize(10);
         //配置队列大小
-        threadPoolTaskExecutor.setQueueCapacity(50);
+        threadPoolTaskExecutor.setQueueCapacity(20);
         //配置线程池前缀
         threadPoolTaskExecutor.setThreadNamePrefix("custom-service-");
         //配置拒绝策略
