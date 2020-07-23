@@ -67,14 +67,14 @@
 ```
 
 ## 功能预览
-![](doc/1595318484.jpg)
+![1595318445.jpg](https://www.686blog.com/api/doc/2020/07/23/1595496390739.jpg)
 
-![](doc/1595318445.jpg)
+![1595318484.jpg](https://www.686blog.com/api/doc/2020/07/23/1595496399330.jpg)
 
-![](doc/1595467061.jpg)
+![1595467061.jpg](https://www.686blog.com/api/doc/2020/07/23/1595496402833.jpg)
 
-![](doc/1595467130.jpg)
+![1595467130.jpg](https://www.686blog.com/api/doc/2020/07/23/1595496406677.jpg)
 
-![](doc/1595467284.jpg)
+![1595467284.jpg](https://www.686blog.com/api/doc/2020/07/23/1595496410891.jpg)
 
 
