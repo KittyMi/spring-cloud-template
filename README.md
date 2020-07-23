@@ -1,6 +1,6 @@
 # Spring Cloud Template 分布式微服务系统
  <p align="center">
-  <a href="https://github.com/TyCoding/cloud-template/" target="_blank">
+  <a href="https://github.com/KittyMi/spring-cloud-template" target="_blank">
     <img src="https://img.shields.io/badge/SpringCloudTemplate-分布式项目脚手架-green.svg" alt="Build Status">
   </a>
   <img src="https://img.shields.io/badge/Spring%20Boot-2.1.5.RELEASE-yellowgreen.svg" alt="Downloads">
@@ -8,7 +8,7 @@
  </p>
 ## 写在前面
 
-在开始此项目前，请先学习这个基础项目模板 [spring-cloud-template](https://github.com/KittyMi/spring-cloud-template) ，并仔细阅读以下开发文档：
+在开始此项目前，请先学习这个基础项目模板 [spring-cloud-template](https://www.686blog.com/blog/article/23) ，并仔细阅读以下开发文档：
 
 [从零开始搭建Spring Cloud脚手架](https://github.com/KittyMi/spring-cloud-template/README.md)
 
