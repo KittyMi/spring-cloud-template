@@ -12,10 +12,10 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/andyoy/pring-cloud-template.git # git仓库地址
-          search-paths: config-repository # git仓库的相对地址，可配置多个用,分割
-          username: 641230056@qq.com
-          password: Andy940510
+          uri: # git仓库地址
+          search-paths:  # git仓库的相对地址，可配置多个用,分割
+          username: #用户名
+          password: #密码
 
 # actuator
 management:
