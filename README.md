@@ -28,7 +28,6 @@
 | Spring Cloud | Greenwich.SR1 |
 | Spring Security OAuth2 | 2.3.4.RELEASE |
 | Mybatis Plus | 3.1.1 | 
-| Swagger2 | 2.9.2 |
 
 ## 启动说明
 
