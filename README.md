@@ -1,10 +1,10 @@
 # Spring Cloud Template 分布式微服务系统
  <p align="center">
   <a href="https://github.com/KittyMi/spring-cloud-template" target="_blank">
-    <img src="https://img.shields.io/badge/SpringCloudTemplate-分布式项目脚手架-green.svg" alt="Build Status">
+    <img src="https://www.686blog.com/api/doc/2020/07/23/1595497468130.svg" alt="Build Status">
   </a>
-  <img src="https://img.shields.io/badge/Spring%20Boot-2.1.5.RELEASE-yellowgreen.svg" alt="Downloads">
-  <img src="https://img.shields.io/badge/Spring%20Cloud-Greenwich.RELEASE-blue.svg" alt="Coverage Status">
+  <img src="https://www.686blog.com/api/doc/2020/07/23/1595497531093.svg" alt="Downloads">
+  <img src="https://www.686blog.com/api/doc/2020/07/23/1595497531147.svg" alt="Coverage Status">
  </p>
 ## 写在前面
 
