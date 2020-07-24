@@ -1,4 +1,4 @@
-package com.andy.test;
+package com.andy.publisher;
 
 import com.andy.mybatis.entity.UserInfo;
 import lombok.extern.slf4j.Slf4j;

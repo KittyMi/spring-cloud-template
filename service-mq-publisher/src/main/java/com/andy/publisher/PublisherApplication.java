@@ -1,4 +1,4 @@
-package com.andy.test;
+package com.andy.publisher;
 
 import com.andy.core.BaseApplication;
 import org.springframework.boot.SpringApplication;
@@ -8,9 +8,9 @@ import org.springframework.boot.SpringApplication;
  * @date 2020-07-21
  * 服务启动入口
  */
-public class MqTestApplication extends BaseApplication {
+public class PublisherApplication extends BaseApplication {
     public static void main( String[] args ) {
-        SpringApplication.run(MqTestApplication.class,args);
+        SpringApplication.run(PublisherApplication.class,args);
     }
 
 }

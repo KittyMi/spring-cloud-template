@@ -1,4 +1,4 @@
-package com.andy.mq;
+package com.andy.subscribe;
 
 import com.alibaba.fastjson.JSON;
 import com.andy.mybatis.entity.UserInfo;

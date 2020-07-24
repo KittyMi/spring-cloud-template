@@ -1,7 +1,7 @@
 package com.andy;
 
 import com.andy.mybatis.entity.UserInfo;
-import com.andy.test.MqTestApplication;
+import com.andy.publisher.PublisherApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 
 @RunWith(SpringRunner.class)
 @Slf4j
-@SpringBootTest(classes = MqTestApplication.class)
+@SpringBootTest(classes = PublisherApplication.class)
 @EnableBinding(Source.class)
 public class TestMq {
     @Resource
