@@ -25,9 +25,11 @@ spring:
         output:
           destination: Publisher
           content-type: application/json
+          group: mq-service
         input:
           destination: Subscribe
           content-type: application/json
+          group: mq-service
     config:
       name: service-core,service-mybatis,service-redis
       profile: dev
