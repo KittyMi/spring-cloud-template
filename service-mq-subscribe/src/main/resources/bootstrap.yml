@@ -1,0 +1,53 @@
+server:
+  port: 9013
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  application:
+    name: service-mq-subscribe
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 192.168.1.86
+                poer: 5672
+                username: mq
+                password: mq123
+                virtual-host: /
+      bindings:
+        output:
+          destination: Subscribe
+          content-type: application/json
+        input:
+          destination: Publisher
+          content-type: application/json
+    config:
+      name: service-core,service-mybatis,service-redis
+      profile: dev
+      label: master
+      fail-fast: true #不加载配置,减少等待前置的时间
+      discovery:
+        enabled: true # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
+        service-id: service-config # 指定Config Server在服务发现中的serviceId，默认是configserver
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:9001/eureka/,http://eureka2:9002/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+
+management:
+  health:
+    rabbit:
+      enabled: false

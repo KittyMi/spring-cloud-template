@@ -62,7 +62,9 @@
     <module>service-authentication</module>
     <module>service-user</module>
     <module>service-gateway</module>
-      <module>service-hystrix</module>
+    <module>service-hystrix</module>
+    <module>service-mq-subscribe</module>
+    <module>service-mq-publisher</module>
   </modules>
 
   <dependencies>
