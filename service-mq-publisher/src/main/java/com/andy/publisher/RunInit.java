@@ -24,8 +24,8 @@ public class RunInit implements CommandLineRunner {
             user.setNickName("min.lai"+i)
                     .setPhone("13826458956")
                     .setEmail("641230056@qq.com")
-                    .setGmtCreate(new Timestamp(System.nanoTime()))
-                    .setGmtUpdated(new Timestamp(System.nanoTime()))
+                    //.setGmtCreate(new Timestamp(System.nanoTime()))
+                   // .setGmtUpdated(new Timestamp(System.nanoTime()))
                     .setId(Long.parseLong(i+""));
             Boolean result = source.output().send(MessageBuilder.withPayload(user).build());
 

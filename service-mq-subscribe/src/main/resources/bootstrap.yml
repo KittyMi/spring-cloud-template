@@ -23,6 +23,9 @@ spring:
                 virtual-host: /
       bindings:
         output:
+          consumer:
+            auto-bind-dlq: true
+            max-attempts: 1
           destination: Subscribe
           content-type: application/json
           group: mq-service
