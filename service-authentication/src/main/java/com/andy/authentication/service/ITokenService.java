@@ -11,6 +11,7 @@ import java.util.Map;
  */
 public interface ITokenService {
 
+    Boolean removeToken(String token);
     /**
      * 检查token是否有效
      * @param token token

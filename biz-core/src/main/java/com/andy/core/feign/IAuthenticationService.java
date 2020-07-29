@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
         }
 )
 public interface IAuthenticationService {
+
+
+    @GetMapping(value = "/authentication/remove_token")
+    Boolean removeToken(@RequestParam("token") String token);
+
     /**
      * 检查token是否有效
      * @param token token

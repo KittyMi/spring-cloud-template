@@ -14,6 +14,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import ma.glasnost.orika.MapperFacade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -35,6 +37,7 @@ public class UserInfoController {
 
     @Resource
     IUserInfoService service;
+
 
     /**
      * 注册
@@ -64,15 +67,13 @@ public class UserInfoController {
 
     /**
      * 登出
-     * @param dto
+     * @param
      * @return
      */
-    @PostMapping(value = "/logout")
+    @GetMapping(value = "/logout")
     @ApiOperation(value = "用户登出")
-    Result<Boolean> logout(
-            @CurrentUser UserInfoDTO dto
-    ) {
-        return ResultFactory.success(true);
+    Result<Boolean> logout(String accessToken) {
+        return ResultFactory.success(service.logout(accessToken));
     }
 
     /**

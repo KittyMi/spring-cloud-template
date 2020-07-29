@@ -97,6 +97,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .exceptionTranslator(customWebResponseExceptionTranslator)
 
                 .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST)
+                //修改默认的哦啊oauth2的默认跳转
                 .pathMapping("/oauth/check_token", "/auth/check_token")
                 .pathMapping("/oauth/token", "/auth/token")
         ;

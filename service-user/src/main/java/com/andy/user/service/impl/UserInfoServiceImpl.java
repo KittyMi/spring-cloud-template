@@ -85,5 +85,10 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
                 .setRefreshExpiration((Long) dto.getRefreshToken().get("expiration"));
     }
 
+    @Override
+    public Boolean logout(String token) {
+        return authenticationService.removeToken(token);
+    }
+
 
 }

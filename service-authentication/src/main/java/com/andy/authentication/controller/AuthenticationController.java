@@ -29,6 +29,11 @@ public class AuthenticationController {
     IPermissionService permissionService;
 
 
+    @GetMapping(value = "/remove_token")
+    Boolean removeToken(@RequestParam("token") String token) {
+        return tokenService.removeToken(token);
+    }
+
     /**
      * 检查token是否有效
      * @param token token

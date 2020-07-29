@@ -36,6 +36,11 @@ public class TokenServiceImpl implements ITokenService {
     @Resource
     RedisTokenStore tokenStore;
 
+    @Override
+    public Boolean removeToken(String token) {
+        return authorizationService.removeToken(token);
+    }
+
     /**
      * 检查token是否有效
      *
@@ -46,7 +51,6 @@ public class TokenServiceImpl implements ITokenService {
     public Boolean checkToken(String token) {
 
         Map<String, Object> resp = authorizationService.checkToken(token);
-
         return (Boolean) resp.get("active");
     }
 

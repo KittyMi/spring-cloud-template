@@ -22,6 +22,17 @@ import java.util.Map;
 )
 public interface IAuthorizationService {
 
+
+        /**
+         * token删除
+         * @param token
+         * @return
+         */
+        @RequestMapping(
+                value = "/auth/remove_token",
+                method = RequestMethod.GET
+        )
+        Boolean removeToken(@RequestParam("token") String token);
         /**
          * OAuth2 Server check token
          * @param token token

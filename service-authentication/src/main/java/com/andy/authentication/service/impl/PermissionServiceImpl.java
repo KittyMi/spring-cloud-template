@@ -42,6 +42,7 @@ public class PermissionServiceImpl implements IPermissionService {
                 "/service-authentication/**",
                 "/service-authorization/**",
                 "/service-user/*/login",
+                "/service-user/*/logout",
                 "/**/api-docs",
                 "/swagger-ui.html**",
                 "/**/druid/**"

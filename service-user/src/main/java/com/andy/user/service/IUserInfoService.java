@@ -31,4 +31,7 @@ public interface IUserInfoService extends IService<UserInfo> {
     Resp.LoginResp login(Req.LoginReq req);
 
 
+    Boolean logout(String token);
+
+
 }
