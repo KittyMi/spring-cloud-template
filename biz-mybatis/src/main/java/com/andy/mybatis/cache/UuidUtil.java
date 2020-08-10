@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 /**
- * @author ly
+ * @author lai.min
  * @date 2019/5/17 10:53
  * description: UUID生成器
  */

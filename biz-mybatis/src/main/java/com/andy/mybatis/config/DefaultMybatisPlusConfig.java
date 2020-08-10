@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author ly
+ * @author lai.min
  * @date 2019/9/16 11:25
  * desc:
  */

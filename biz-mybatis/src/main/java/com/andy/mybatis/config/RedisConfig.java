@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 
 /**
- * @author ly
+ * @author lai.min
  * @date 2019/5/17 11:53
  * description: Redis的配置
  */

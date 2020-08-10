@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 /**
- * @author ly
+ * @author lai.min
  * @date 2018/2/23 15:11
  * RedisCache 静态注入函数
  */

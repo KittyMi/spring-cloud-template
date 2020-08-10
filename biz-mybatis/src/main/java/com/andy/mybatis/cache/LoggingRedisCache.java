@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.cache.decorators.LoggingCache;
 
 /**
- * @author ly
+ * @author lai.min
  * @date 2018/2/7 17:40
  * @desc redis cache decorators
  */

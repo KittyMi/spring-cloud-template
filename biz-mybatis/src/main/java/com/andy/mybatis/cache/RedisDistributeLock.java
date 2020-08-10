@@ -19,7 +19,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 /**
- * @author ly
+ * @author lai.min
  * @date 2018/6/25 15:47
  * EX seconds — 以秒为单位设置 key 的过期时间；
  * PX milliseconds — 以毫秒为单位设置 key 的过期时间；
