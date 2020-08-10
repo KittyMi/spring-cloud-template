@@ -51,6 +51,6 @@ spring:
 
 swagger:
   knife:
-    ignore-routes: service-config, service-eureka, service-zuul, service-gateway ,service-zipkin,service-monitor,service-hystrix
+    ignore-routes: service-config, service-eureka, service-zuul, service-gateway ,service-zipkin,service-monitor,service-hystrix,service-authorization,service-authentication
     api-docs-path: /v2/api-docs
-    swagger-version: 2.0
+    swagger-version: 1.0

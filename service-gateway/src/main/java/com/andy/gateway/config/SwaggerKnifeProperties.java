@@ -2,7 +2,6 @@ package com.andy.gateway.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,7 +12,6 @@ import java.util.Set;
  * @author min.lai
  * @date 2020/5/28 16:36
  */
-@Component
 @Data
 @ConfigurationProperties(value = "swagger.knife")
 public class SwaggerKnifeProperties {

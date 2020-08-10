@@ -2,6 +2,7 @@ package com.andy.gateway.config;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.gateway.config.GatewayProperties;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.context.annotation.Primary;
@@ -22,6 +23,7 @@ import java.util.Set;
 @Component
 @Primary
 @AllArgsConstructor
+@EnableConfigurationProperties(SwaggerKnifeProperties.class)
 public class SwaggerResourceConfig implements SwaggerResourcesProvider {
 
     private final RouteLocator routeLocator;
