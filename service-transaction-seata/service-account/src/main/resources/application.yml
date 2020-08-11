@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          url: jdbc:mysql://${mysql.host}:${mysql.port}/seata?useUnicode=true&characterEncoding=utf-8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false&useSSL=true&verifyServerCertificate=false&serverTimezone=GMT%2B8
+          username: ${mysql.username}
+          password: ${mysql.password}
+  cloud:
+    alibaba:
+      seata:
+        #与file.conf中service.vgroupMapping一致，不配置需要修改file.conf中的值为${application.name}-fescar-service-group
+        tx-service-group: my_test_tx_group

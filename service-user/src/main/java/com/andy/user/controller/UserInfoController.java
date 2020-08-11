@@ -5,17 +5,12 @@ import com.andy.core.annotation.CurrentUser;
 import com.andy.core.bean.Result;
 import com.andy.core.bean.ResultFactory;
 import com.andy.core.bean.dto.UserInfoDTO;
-import com.andy.mybatis.entity.UserInfo;
 import com.andy.user.entity.Req;
 import com.andy.user.entity.Resp;
 import com.andy.user.service.IUserInfoService;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import ma.glasnost.orika.MapperFacade;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

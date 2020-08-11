@@ -1,8 +1,8 @@
 package com.andy.user.service;
 
-import com.andy.mybatis.entity.UserInfo;
 import com.andy.user.entity.Req;
 import com.andy.user.entity.Resp;
+import com.andy.user.mybatis.entity.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 

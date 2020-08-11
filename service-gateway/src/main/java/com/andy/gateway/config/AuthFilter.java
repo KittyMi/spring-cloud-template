@@ -27,7 +27,7 @@ import java.util.Objects;
 @Slf4j
 public class AuthFilter implements GlobalFilter, Ordered {
 
-    private static final String CURRENT_USER_KEY = "current-user";
+    private static final String CURRENT_USER_KEY = "current_user";
 
     @Resource
     IAuthService authService;

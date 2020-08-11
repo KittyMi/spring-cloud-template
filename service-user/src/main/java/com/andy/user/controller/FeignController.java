@@ -1,9 +1,8 @@
 package com.andy.user.controller;
 
 import com.andy.core.bean.dto.UserInfoDTO;
-import com.andy.mybatis.entity.UserInfo;
+import com.andy.user.mybatis.entity.UserInfo;
 import com.andy.user.service.IUserInfoService;
-import com.baomidou.mybatisplus.core.toolkit.EncryptUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import lombok.extern.slf4j.Slf4j;
 import ma.glasnost.orika.MapperFacade;

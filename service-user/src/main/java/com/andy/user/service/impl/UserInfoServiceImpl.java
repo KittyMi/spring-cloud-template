@@ -3,11 +3,10 @@ package com.andy.user.service.impl;
 import com.andy.core.bean.dto.TokenDTO;
 import com.andy.core.exception.ServiceException;
 import com.andy.core.feign.IAuthenticationService;
-import com.andy.core.feign.IAuthorizationService;
-import com.andy.mybatis.entity.UserInfo;
-import com.andy.mybatis.mapper.UserInfoMapper;
 import com.andy.user.entity.Req;
 import com.andy.user.entity.Resp;
+import com.andy.user.mybatis.entity.UserInfo;
+import com.andy.user.mybatis.mapper.UserInfoMapper;
 import com.andy.user.service.IUserInfoService;
 import com.baomidou.mybatisplus.core.toolkit.EncryptUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.List;
 import java.util.Objects;
 
 import static com.andy.core.bean.ErrorCode.USERNAME_ALREADY_EXIST;

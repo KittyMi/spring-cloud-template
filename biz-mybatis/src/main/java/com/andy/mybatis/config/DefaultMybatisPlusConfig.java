@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 )
 @EnableTransactionManagement
 @Configuration
-@MapperScan(basePackages = "com.andy.mybatis.mapper")
+@MapperScan(basePackages = "com.andy.*.mybatis.mapper")
 @DependsOn( value = {"redisTemplate", "redisCacheTransfer"} )
 public class DefaultMybatisPlusConfig {
     /**

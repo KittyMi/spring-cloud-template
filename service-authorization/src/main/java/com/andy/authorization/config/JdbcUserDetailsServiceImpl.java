@@ -1,8 +1,7 @@
 package com.andy.authorization.config;
 
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.andy.authorization.service.IUserInfoService;
-import com.andy.mybatis.entity.UserInfo;
+import com.andy.core.bean.dto.UserInfoDTO;
+import com.andy.core.feign.IUserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -28,15 +27,13 @@ public class JdbcUserDetailsServiceImpl implements UserDetailsService {
     PasswordEncoder passwordEncoder;
 
     @Resource
-    IUserInfoService userInfoService;
+    IUserService userService;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
 
-        UserInfo userInfo = userInfoService.getOne(
-                Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUsername, s),
-                false
-        );
+        UserInfoDTO userInfo=userService.getByUsername(s);
+
         if (null == userInfo) {
             throw new UsernameNotFoundException(String.valueOf(USERNAME_NOT_FOUND.getCode()));
         }

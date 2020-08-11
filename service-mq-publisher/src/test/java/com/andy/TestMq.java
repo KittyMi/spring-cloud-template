@@ -1,6 +1,6 @@
 package com.andy;
 
-import com.andy.mybatis.entity.UserInfo;
+import com.andy.core.bean.dto.UserInfoDTO;
 import com.andy.publisher.PublisherApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -25,12 +25,9 @@ public class TestMq {
     @Test
     @Output(Source.OUTPUT)
     public void test(){
-        UserInfo user=new UserInfo();
-        user.setNickName("min.lai")
-                .setPhone("13826458956")
-                .setEmail("641230056@qq.com")
-                .setGmtCreate(new Timestamp(System.nanoTime()))
-                .setGmtUpdated(new Timestamp(System.nanoTime()))
+        UserInfoDTO user=new UserInfoDTO();
+        user.setNickname("min.lai")
+                .setUsername("13826458956")
                 .setId(200L);
         Boolean result=source.output().send(MessageBuilder.withPayload(user).build());
 
