@@ -28,10 +28,10 @@
 
     <!--        mybatis-->
     <mybatis.version>2.0.1</mybatis.version>
-    <druid.version>1.1.16</druid.version>
-    <mybatis-plus.version>3.1.1</mybatis-plus.version>
+    <druid.version>1.1.22</druid.version>
+    <mybatis-plus.version>3.3.1</mybatis-plus.version>
     <dynamic-datasource.version>2.5.4</dynamic-datasource.version>
-    <jackson-databind.version>2.9.0</jackson-databind.version>
+    <jackson-databind.version>2.10.4</jackson-databind.version>
 
     <!--        utils-->
     <fastjson.version>1.2.58</fastjson.version>
